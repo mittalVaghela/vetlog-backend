@@ -197,7 +197,7 @@ class LocationControllerTest @Autowired constructor(
     val result =
         mockMvc
             .perform(
-                delete("/geolocation/storeLocation")
+                delete("/geolocation/removePetsById")
                     .header("token", "testToken")
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(objectMapper.writeValueAsString(petLocationCommand)))
@@ -215,7 +215,7 @@ class LocationControllerTest @Autowired constructor(
     val result =
         mockMvc
             .perform(
-                delete("/geolocation/storeLocation")
+                delete("/geolocation/removePetsById")
                     .header("token", "testToken")
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(objectMapper.writeValueAsString(invalidCommand)))
@@ -243,7 +243,7 @@ class LocationControllerTest @Autowired constructor(
 
 		mockMvc
 			.perform(
-				delete("/geolocation/storeLocation")
+				delete("/geolocation/removePetsById")
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(objectMapper.writeValueAsString(petLocationCommand))
 			)
@@ -256,7 +256,7 @@ class LocationControllerTest @Autowired constructor(
 
 		mockMvc
 			.perform(
-				delete("/geolocation/storeLocation")
+				delete("/geolocation/removePetsById")
 					.header("token", "invalidToken")
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(objectMapper.writeValueAsString(petLocationCommand))
