@@ -98,7 +98,7 @@ public class LocationController {
     return new ResponseEntity<>("Deleted all pet's locations", HttpStatus.OK);
   }
 
-  @DeleteMapping( "/storeLocation" )
+  @DeleteMapping( "/removePetsById" )
   public ResponseEntity<String> deleteLocationsByPetIds(
       @RequestBody @Valid PetLocationCommand pets,
       HttpServletResponse response,
